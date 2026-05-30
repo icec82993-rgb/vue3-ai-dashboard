@@ -1,27 +1,26 @@
 <template>
-  <div class="dashboard-app">
-    <h1>AI 驱动的个人智慧看板</h1>
-    <hr />
-    <ChatWindow />
+  <div class="dashboard-layout">
+    <div class="left-wing">
+      <ChatWindow />
+    </div>
+    <div class="right-wing">
+      <SecurityPanel />
+    </div>
   </div>
 </template>
 
 <script setup>
-// 引入刚刚新建的组件
 import ChatWindow from './components/ChatWindow.vue'
+import SecurityPanel from './components/SecurityPanel.vue'
 </script>
 
 <style>
-.dashboard-app {
-  font-family: Arial, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-hr {
-  margin: 20px 0;
-  border: 0;
-  border-top: 1px solid #eee;
+body { background-color: #f1f5f9; margin: 0; font-family: system-ui, sans-serif; }
+.dashboard-layout { display: flex; max-width: 1100px; margin: 40px auto; gap: 20px; padding: 0 20px; }
+.left-wing { flex: 2; }
+.right-wing { flex: 1; }
+
+@media (max-width: 768px) {
+  .dashboard-layout { flex-direction: column; margin: 20px auto; }
 }
 </style>
